@@ -1,0 +1,68 @@
+
+<%- include('partials/header', { title: 'About Me' }) %>
+
+<main class="container my-5">
+
+    <section id="about-section">
+
+        <h1 class="mb-4">About Me</h1>
+
+        <!-- Profile picture and introduction video -->
+        <div class="row justify-content-center g-4 mb-4">
+
+            <div class="col-12 col-md-6 text-center">
+                <img
+                    src="/images/portfolio_headshot.jpeg"
+                    alt="My professional headshot"
+                    class="img-fluid rounded"
+                    style="max-height: 320px;">
+            </div>
+
+            <div class="col-12 col-md-6 text-center">
+                <video
+                    controls
+                    poster="/images/video-poster.png"
+                    class="img-fluid rounded"
+                    style="max-height: 320px;">
+
+                    <source
+                        src="/videos/Introduction_portfolio.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support video.
+                </video>
+            </div>
+
+        </div>
+
+        <!-- Personal introduction -->
+        <div id="about-text">
+
+            <p>
+                My name is Caleb Agyei, and I'm an aspiring
+                cybersecurity professional currently studying
+                at Ontario Tech University.
+            </p>
+
+            <p>
+                Besides a love for solving technical problems,
+                I also enjoy staying active through sports like
+                basketball, soccer, and tennis. I enjoy cooking
+                and playing the piano too!
+            </p>
+
+            <p>
+                My career goal is to continue building my
+                technical and communication skills and pursue
+                opportunities in cybersecurity, IT governance,
+                risk and compliance, technical consulting,
+                and solutions engineering.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<%- include('partials/footer') %>
