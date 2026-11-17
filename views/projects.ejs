@@ -1,6 +1,15 @@
+<!--
+    INFR3120 - Assignment 2
+    Projects Page
 
+    This page displays seven projects from my IT studies.
+    Bootstrap cards are used to organize the projects
+    in a responsive layout.
+-->
+
+<!-- Loads the shared header and navigation bar -->
 <%- include('partials/header', { title: 'Projects' }) %>
-
+<!-- Bootstrap container centers the Projects page content -->
 <main class="container my-5">
 
     <h1 class="text-center mb-3">My Projects</h1>
@@ -10,7 +19,10 @@
         cloud technologies, databases, web development,
         research, and technical problem solving.
     </p>
-
+<!--
+    Bootstrap grid organizes the projects into rows.
+    The g-4 class adds spacing between project cards.
+-->
     <div class="row g-4">
 
         <!-- Project 1 -->

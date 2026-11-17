@@ -1,17 +1,32 @@
 
+<!--
+    INFR3120 - Assignment 2
+    Home Page
+
+    This page introduces me and my interests.
+    It uses the shared EJS header and footer
+    to maintain a consistent website layout.
+-->
+
+<!-- Includes the shared navigation bar and page setup -->
 <%- include('partials/header') %>
 
+<!-- Bootstrap container centers the page content -->
 <main class="container my-5">
 
+    <!-- Welcome section introduces the portfolio -->
     <section id="welcome">
 
+        <!-- Main page heading -->
         <h1>Welcome to My Portfolio</h1>
 
+        <!-- Introduction about my education -->
         <p>
             I'm an Information Technology student specializing
             in Networking and IT Security at Ontario Tech University.
         </p>
 
+        <!-- Personal interests and career focus -->
         <p>
             My interests include cybersecurity with a focus on
             governance, risk and compliance, cloud technologies,
@@ -19,12 +34,15 @@
             and music.
         </p>
 
+        <!-- Explains what visitors will find on the website -->
         <p>
             My portfolio highlights some of the projects and
             technical experiences I have completed throughout
             my studies.
         </p>
 
+        <!-- Bootstrap button links to the Projects page -->
+        <!-- Font Awesome adds an icon beside the text -->
         <a href="/projects" class="btn btn-primary">
             <i class="fa-solid fa-folder-open"></i>
             View My Projects
@@ -34,4 +52,5 @@
 
 </main>
 
+<!-- Includes the shared footer and closes the HTML document -->
 <%- include('partials/footer') %>

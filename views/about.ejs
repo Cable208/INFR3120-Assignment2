@@ -1,16 +1,32 @@
 
+<!--
+    INFR3120 - Assignment 2
+    About Me Page
+
+    This page includes my biography, profile photo,
+    and introduction video from Assignment 1.
+    Bootstrap is used to make the layout responsive.
+-->
+
+<!-- Loads the shared header with the About Me page title -->
 <%- include('partials/header', { title: 'About Me' }) %>
 
+<!-- Bootstrap container adds spacing and centers the content -->
 <main class="container my-5">
 
+    <!-- Main About Me section -->
     <section id="about-section">
 
         <h1 class="mb-4">About Me</h1>
 
-        <!-- Profile picture and introduction video -->
+        <!-- Bootstrap row arranges the image and video side by side -->
         <div class="row justify-content-center g-4 mb-4">
 
+            <!-- Profile picture column -->
+            <!-- col-md-6 takes half the row on medium and larger screens -->
             <div class="col-12 col-md-6 text-center">
+
+                <!-- Profile image is loaded from the public/images folder -->
                 <img
                     src="/images/portfolio_headshot.jpeg"
                     alt="My professional headshot"
@@ -18,32 +34,39 @@
                     style="max-height: 320px;">
             </div>
 
+            <!-- Introduction video column -->
             <div class="col-12 col-md-6 text-center">
+
+                <!-- Video uses native HTML controls for playback -->
                 <video
                     controls
                     poster="/images/video-poster.png"
                     class="img-fluid rounded"
                     style="max-height: 320px;">
 
+                    <!-- Video file is loaded from the public/videos folder -->
                     <source
                         src="/videos/Introduction_portfolio.mp4"
                         type="video/mp4">
 
+                    <!-- Message displayed if the browser cannot play video -->
                     Your browser does not support video.
                 </video>
             </div>
 
         </div>
 
-        <!-- Personal introduction -->
+        <!-- Biography section -->
         <div id="about-text">
 
+            <!-- Personal introduction and education -->
             <p>
                 My name is Caleb Agyei, and I'm an aspiring
                 cybersecurity professional currently studying
                 at Ontario Tech University.
             </p>
 
+            <!-- Personal interests outside of technology -->
             <p>
                 Besides a love for solving technical problems,
                 I also enjoy staying active through sports like
@@ -51,6 +74,7 @@
                 and playing the piano too!
             </p>
 
+            <!-- Career goals and professional interests -->
             <p>
                 My career goal is to continue building my
                 technical and communication skills and pursue
@@ -65,4 +89,5 @@
 
 </main>
 
+<!-- Loads the shared footer -->
 <%- include('partials/footer') %>
