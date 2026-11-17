@@ -1,93 +1,112 @@
 
 <!--
     INFR3120 - Assignment 2
-    About Me Page
+    Contact Me Page
 
-    This page includes my biography, profile photo,
-    and introduction video from Assignment 1.
-    Bootstrap is used to make the layout responsive.
+    This page provides a contact form where visitors
+    can enter their name, email, cell number, and comments.
+
+    Bootstrap is used for the form layout and styling.
+    HTML validation makes sure required fields are completed.
+    JavaScript displays a confirmation message after validation.
+
+    The form is for demonstration purposes and does not
+    actually send emails.
 -->
 
-<!-- Loads the shared header with the About Me page title -->
-<%- include('partials/header', { title: 'About Me' }) %>
+<!-- Includes the shared header and navigation bar -->
+<%- include('partials/header', { title: 'Contact Me' }) %>
 
-<!-- Bootstrap container adds spacing and centers the content -->
+<!-- Bootstrap container centers the page content -->
 <main class="container my-5">
 
-    <!-- Main About Me section -->
-    <section id="about-section">
+    <!-- Contact section with a maximum width for readability -->
+    <section id="contact" class="mx-auto" style="max-width: 650px;">
 
-        <h1 class="mb-4">About Me</h1>
+        <!-- Main heading -->
+        <h1 class="text-center mb-4">Contact Me</h1>
 
-        <!-- Bootstrap row arranges the image and video side by side -->
-        <div class="row justify-content-center g-4 mb-4">
+        <!-- Instructions for visitors -->
+        <p class="text-center mb-4">
+            If you would like to get in touch with me,
+            please fill out the form below.
+        </p>
 
-            <!-- Profile picture column -->
-            <!-- col-md-6 takes half the row on medium and larger screens -->
-            <div class="col-12 col-md-6 text-center">
+        <!-- Contact form using Bootstrap styling -->
+        <form id="contactForm">
 
-                <!-- Profile image is loaded from the public/images folder -->
-                <img
-                    src="/images/portfolio_headshot.jpeg"
-                    alt="My professional headshot"
-                    class="img-fluid rounded"
-                    style="max-height: 320px;">
+            <!-- Name field requires the visitor to enter their name -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text"
+                       class="form-control"
+                       id="name"
+                       name="name"
+                       required>
             </div>
 
-            <!-- Introduction video column -->
-            <div class="col-12 col-md-6 text-center">
-
-                <!-- Video uses native HTML controls for playback -->
-                <video
-                    controls
-                    poster="/images/video-poster.png"
-                    class="img-fluid rounded"
-                    style="max-height: 320px;">
-
-                    <!-- Video file is loaded from the public/videos folder -->
-                    <source
-                        src="/videos/Introduction_portfolio.mp4"
-                        type="video/mp4">
-
-                    <!-- Message displayed if the browser cannot play video -->
-                    Your browser does not support video.
-                </video>
+            <!-- Email field uses the email type for basic validation -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email"
+                       class="form-control"
+                       id="email"
+                       name="email"
+                       required>
             </div>
 
-        </div>
+            <!-- Phone field requires a 10-digit cell number -->
+            <div class="mb-3">
+                <label for="phone" class="form-label">Cell Number:</label>
+                <input type="tel"
+                       class="form-control"
+                       id="phone"
+                       name="phone"
+                       pattern="[0-9]{10}"
+                       placeholder="9051234567"
+                       required>
+            </div>
 
-        <!-- Biography section -->
-        <div id="about-text">
+            <!-- Textarea allows visitors to write a longer message -->
+            <div class="mb-3">
+                <label for="comments" class="form-label">Comments:</label>
+                <textarea class="form-control"
+                          id="comments"
+                          name="comments"
+                          rows="6"
+                          required></textarea>
+            </div>
 
-            <!-- Personal introduction and education -->
-            <p>
-                My name is Caleb Agyei, and I'm an aspiring
-                cybersecurity professional currently studying
-                at Ontario Tech University.
-            </p>
+            <!-- Submit button includes a Font Awesome icon -->
+            <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-paper-plane"></i>
+                Submit
+            </button>
 
-            <!-- Personal interests outside of technology -->
-            <p>
-                Besides a love for solving technical problems,
-                I also enjoy staying active through sports like
-                basketball, soccer, and tennis. I enjoy cooking
-                and playing the piano too!
-            </p>
+        </form>
 
-            <!-- Career goals and professional interests -->
-            <p>
-                My career goal is to continue building my
-                technical and communication skills and pursue
-                opportunities in cybersecurity, IT governance,
-                risk and compliance, technical consulting,
-                and solutions engineering.
-            </p>
-
-        </div>
+        <!-- Displays feedback after successful form validation -->
+        <p id="formMessage" class="mt-3" role="status"></p>
 
     </section>
 
 </main>
 
-<!-- Loads the shared footer -->
+<!-- JavaScript handles the demonstration form submission -->
+<script>
+    // Finds the form using its ID and listens for submission
+    document.getElementById('contactForm')
+        .addEventListener('submit', function(event) {
+
+            // Prevents the form from submitting and reloading the page
+            event.preventDefault();
+
+            // Displays a message once HTML form validation passes
+            // No email is sent because this is a demonstration form
+            document.getElementById('formMessage').textContent =
+                'Form validation passed! This is a demonstration form.';
+        });
+</script>
+
+<!-- Includes the shared footer and closes the HTML document -->
 <%- include('partials/footer') %>
