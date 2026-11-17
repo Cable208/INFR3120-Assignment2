@@ -56,5 +56,3 @@ The website is deployed using Render and connected to GitHub.
 - Font Awesome: https://fontawesome.com/
 - Node.js: https://nodejs.org/
 - EJS: https://ejs.co/
-
-Add any other external code sources used in the project, with their authors and links.
